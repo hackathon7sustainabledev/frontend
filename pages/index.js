@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Card from '../components/Card'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie } from 'recharts';
+import GoogleMapComponent from '../components/Map/GoogleMapComponent'
+// import axios from 'axios';
 
 const data01 = [
   { name: 'Group A', value: 400 },
@@ -110,7 +112,7 @@ export default function Home() {
         <div className='h-[84vh] w-[100%] mt-3'>
           <div className='flex h-[45%] w-[100%] mb-4'>
             <div className='w-[48%] h-[100%] mr-3 ml-3 bg-black rounded-xl text-white'>
-fse
+            <GoogleMapComponent />
             </div>
             <div className='w-[48%] h-[100%] bg-black rounded-xl'>
             <ResponsiveContainer width="100%" height="100%">
@@ -138,7 +140,7 @@ fse
           </div>
           <div className='flex h-[45%] w-[100%]'>
             <div className='w-[48%] h-[100%] mr-3 ml-3 bg-black rounded-xl text-white'>
-fse
+              
             </div>
             <div className='flex w-[48%] h-[100%] rounded-xl overflow-hidden'>
                 <div className="w-[48%] h-[100%] mr-6 bg-black rounded-xl">
