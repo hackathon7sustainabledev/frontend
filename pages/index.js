@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Card from '../components/Card'
-// import styles from '../styles/Home.module.css'
+import GoogleMapComponent from '../components/Map/GoogleMapComponent'
+import axios from 'axios';
+
 
 export default function Home() {
   return (
@@ -54,7 +56,7 @@ export default function Home() {
         <div className='h-[84vh] w-[100%] mt-3'>
           <div className='flex h-[45%] w-[100%] mb-4'>
             <div className='w-[48%] h-[100%] mr-3 ml-3 bg-black rounded-xl text-white'>
-fse
+			<GoogleMapComponent />
             </div>
             <div className='w-[48%] h-[100%] bg-black rounded-xl'>
 sfsf
