@@ -77,7 +77,9 @@ export default function Home() {
   return (
     <div className="flex bg-[#2F3855]">
       <div class="flex-none w-[20vw] h-[100vh]">
-        <div className="h-[13vh] bg-[#ffbd59]"></div>
+        <div className="">
+			<Image src={require('../assets/4.png')} />
+		</div>
         <div className="overflow-scroll max-h-[90vh]">
           <Card>Agent 1</Card>
           <Card>Agent 2</Card>
@@ -87,11 +89,14 @@ export default function Home() {
           <Card>Agent 6</Card>
           <Card>Agent 7</Card>
           <Card>Agent 8</Card>
+		  <Card><span className="align-middle my-8 text-[#FFBD59] text-5xl font-extrabold">
+                    +
+                  </span><span className="text-3xl text-center justify-center align-middle ml-4">Add User</span></Card>
         </div>
       </div>
       <div className="flex-none w-[80vw] h-[100vh]">
         <p className="mt-4 ml-8 text-white text-4xl font-extrabold">
-          Good Morning Abhay
+          Good Morning Abhay!
         </p>
         {page === 1 && (
           <>
@@ -106,7 +111,7 @@ export default function Home() {
               </Card>
               <Card>
                 <p className="font-normal text-white-300 font-black">
-                  Distance Travelled
+                  Average Distance Travelled
                 </p>
                 <p className="text-white font-black">
                   <span className="text-[#FFBD59] text-4xl">2.5</span>km
