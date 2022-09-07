@@ -5,8 +5,8 @@ import { Map, Marker, GoogleApiWrapper, Polyline } from "google-maps-react";
 /*global google*/
 
 const customizeMap = {
-  width: "100%",
-  height: "100%",
+  width: "38.4%",
+  height: "37.6%",
 };
 
 var polyline_coords = [];
@@ -34,6 +34,21 @@ class GoogleMapComponent extends React.Component {
     // destinations = temp;
     // console.log(temp);
   }
+
+  getCenter = () => {
+    var min_lat, max_lat, min_long, max_long;
+    min_lat = max_lat = destinations[0].lat;
+    min_long = max_long = destinations[0].lng;
+    for (var i = 0; i < destinations.length; i++) {
+      min_lat = Math.min(destinations[i].lat, min_lat);
+      max_lat = Math.max(destinations[i].lat, max_lat);
+      min_long = Math.min(destinations[i].lng, min_long);
+      max_long = Math.max(destinations[i].lng, max_long);
+    }
+    var center_lat = (min_lat + max_lat) / 2;
+    var center_long = (min_long + max_long) / 2;
+    return { lat: center_lat, lng: center_long };
+  };
 
   drawMarker = (data, index) => {
     if (this.state.destinations.length === 0) return;
@@ -76,16 +91,12 @@ class GoogleMapComponent extends React.Component {
       <Map
         google={this.props.google}
         style={customizeMap}
-        zoom={6}
-        initialCenter={{
-          lat: 9.96233,
-          lng: 49.80404,
-        }}
+        zoom={9}
+        initialCenter={this.getCenter()}
       >
         {this.getPolyLine()}
         {destinations !== [] &&
           destinations.map((data, index) => {
-            console.log(data);
             return (
               <Marker
                 key={index}
