@@ -140,12 +140,18 @@ export default function Home() {
           </div>
           <div className='flex h-[45%] w-[100%]'>
             <div className='w-[48%] h-[100%] mr-3 ml-3 bg-black rounded-xl text-white'>
+              <p className='mt-4 mb-4 ml-8 text-white text-2xl font-extrabold'>Agent Info</p>
+              <p className='mt-2 ml-8 text-[#b8b8b8] text-xl font-medium'>Name : Abhay Arora</p>
+              <p className='mt-2 ml-8 text-[#b8b8b8] text-xl font-medium'>Email : abhay@gmail.com</p>
+              <p className='mt-2 ml-8 text-[#b8b8b8] text-xl font-medium'>Phone : +91 9876543210</p>
+              <p className='mt-2 ml-8 text-[#b8b8b8] text-xl font-medium'>Location: Chennai</p>
+              <p className='mt-2 ml-8 text-[#b8b8b8] text-xl font-medium'>Social Media : Instagram, LinkedIn</p>
               
             </div>
             <div className='flex w-[48%] h-[100%] rounded-xl overflow-hidden'>
                 <div className="w-[48%] h-[100%] mr-6 bg-black rounded-xl">
                   <p className='mt-4 ml-8 text-white text-2xl font-extrabold'>Agent Rating</p>
-                  <p className='mt-8 ml-16 text-white text-8xl font-extrabold'>4.5</p>
+                  <p className='mt-8 ml-16 text-white text-8xl font-extrabold'>4.6</p>
                 </div>
                 <div className="w-[48%] h-[100%] bg-black rounded-xl">
                 <ResponsiveContainer width="100%" height="100%">
