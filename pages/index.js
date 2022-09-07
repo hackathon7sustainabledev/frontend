@@ -1,7 +1,63 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Card from '../components/Card'
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie } from 'recharts';
+
+const data01 = [
+  { name: 'Group A', value: 400 },
+  { name: 'Group B', value: 300 },
+  { name: 'Group C', value: 300 },
+  { name: 'Group D', value: 200 },
+  { name: 'Group E', value: 278 },
+  { name: 'Group F', value: 189 },
+];
 // import styles from '../styles/Home.module.css'
+const data = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
 
 export default function Home() {
   return (
@@ -57,15 +113,56 @@ export default function Home() {
 fse
             </div>
             <div className='w-[48%] h-[100%] bg-black rounded-xl'>
-sfsf
+            <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="pv" stackId="a" fill="#8884d8" />
+          <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
             </div>
           </div>
           <div className='flex h-[45%] w-[100%]'>
             <div className='w-[48%] h-[100%] mr-3 ml-3 bg-black rounded-xl text-white'>
 fse
             </div>
-            <div className='w-[48%] h-[100%] bg-black rounded-xl'>
-sfsf
+            <div className='flex w-[48%] h-[100%] rounded-xl overflow-hidden'>
+                <div className="w-[48%] h-[100%] mr-6 bg-black rounded-xl">
+                  <p className='mt-4 ml-8 text-white text-2xl font-extrabold'>Agent Rating</p>
+                  <p className='mt-8 ml-16 text-white text-8xl font-extrabold'>4.5</p>
+                </div>
+                <div className="w-[48%] h-[100%] bg-black rounded-xl">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart width={400} height={400}>
+                    <Pie
+                      dataKey="value"
+                      isAnimationActive={false}
+                      data={data01}
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={80}
+                      fill="#8884d8"
+                      label
+                    />
+                    {/* <Pie dataKey="value" data={data02} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d" /> */}
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+                </div>
             </div>
           </div>
         </div>
