@@ -4,7 +4,10 @@ import Card from '../components/Card'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie } from 'recharts';
 import GoogleMapComponent from '../components/Map/GoogleMapComponent'
+import { useState } from 'react';
 // import axios from 'axios';
+
+
 
 const data01 = [
   { name: 'Group A', value: 400 },
@@ -62,39 +65,35 @@ const data = [
 
 
 export default function Home() {
+	const [page, setPage] = useState(1);
   return (
+	
     <div className='flex bg-[#2F3855]'>
       <div class="flex-none w-[20vw] h-[100vh]">
         <div className='h-[13vh] bg-[#ffbd59]'></div>
         <div className='overflow-scroll max-h-[90vh]'> 
           <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>Agent 1</Card>
-          <Card>
-            Agent 2
-          </Card>
-          <Card>
-            Agent 3
-          </Card>
-          <Card>
-            Agent 4
-          </Card>
+          <Card>Agent 2</Card>
+          <Card>Agent 3</Card>
+          <Card>Agent 4</Card>
+          <Card>Agent 5</Card>
+          <Card>Agent 6</Card>
+          <Card>Agent 7</Card>
+          <Card>Agent 8</Card>
+          
         </div>
       </div>
       <div class="flex-none w-[80vw] h-[100vh]">
-        <div className='flex ml-2 mr-4 h-[10vh] mt-7'>
+	  <p className='mt-4 ml-8 text-white text-4xl font-extrabold'>Good Morning Abhay</p>
+        {page===1 && (<>
+		<div className='flex ml-2 mr-4 h-[10vh] mt-7'>
             <Card>
             <p className='font-normal text-gray-300'>Average Time</p>
-            <p className='text-white font-black'>Dummy Text</p> 
+            <p className='text-white font-black'><span className='text-[#FFBD59] text-4xl'>17</span>mins</p> 
             </Card>
             <Card>
             <p className='font-normal text-gray-300'>Distance Travelled</p>
-            <p className='text-white font-black'>Dummy Text</p> 
+            <p className='text-white font-black'><span className='text-[#FFBD59] text-4xl'>2.5</span>km</p> 
             </Card>
             <Card>
             <p className='font-normal text-gray-300'>Conversion Rate</p>
@@ -174,6 +173,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+		</>)
+}
       </div>
 
     </div>
