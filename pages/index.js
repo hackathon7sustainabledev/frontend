@@ -16,7 +16,9 @@ import {
 import { PieChart, Pie } from "recharts";
 import GoogleMapComponent from "../components/Map/GoogleMapComponent";
 import { useState } from "react";
-// import axios from 'axios';
+import Script from "next/script";
+
+import axios from 'axios';
 
 const data01 = [
   { name: "Group A", value: 400 },
@@ -75,6 +77,10 @@ const data = [
 export default function Home() {
   const [page, setPage] = useState(1);
   return (
+	<>
+	<Head><!-- JavaScript Bundle with Popper -->
+<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></Script></Head>
+	
     <div className="flex bg-[#2F3855]">
       <div class="flex-none w-[20vw] h-[100vh]">
         <div className="">
@@ -261,5 +267,6 @@ export default function Home() {
         )}
       </div>
     </div>
+	</>
   );
 }
