@@ -76,14 +76,14 @@ const data = [
 
 export default function Home() {
   const [page, setPage] = useState(1);
-  axios({
-    url: 'https://FirebaseAPI.amoghsingh.repl.co/admin/get_agents',
-    // configuration
-})
-.then(response => 
-   response.json();
+//   axios({
+//     url: 'https://FirebaseAPI.amoghsingh.repl.co/admin/get_agents',
+//     // configuration
+// })
+// .then(response => 
+//    response.json()
    
-)
+// )
   return (
 	<>
     <div className="flex bg-[#2F3855]">
@@ -103,12 +103,22 @@ export default function Home() {
 		  <Card><span className="align-middle my-8 text-[#FFBD59] text-5xl font-extrabold">
                     +
                   </span><span className="text-3xl text-center justify-center align-middle ml-4">Add User</span></Card>
+
+				  <Card><span onClick={()=>{setPage(0)}} className="text-3xl text-center justify-center align-middle ml-4">See All Users</span></Card>
         </div>
       </div>
       <div className="flex-none w-[80vw] h-[100vh]">
         <p className="mt-4 ml-8 text-white text-4xl font-extrabold">
           Good Morning Abhay!
         </p>
+
+		{page === 0 && (
+			<>
+				
+			</>
+		)}
+
+
         {page === 1 && (
           <>
             <div className="flex ml-2 mr-4 h-[10vh] mt-7">
