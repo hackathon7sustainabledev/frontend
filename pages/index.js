@@ -76,11 +76,16 @@ const data = [
 
 export default function Home() {
   const [page, setPage] = useState(1);
+  axios({
+    url: 'https://FirebaseAPI.amoghsingh.repl.co/admin/get_agents',
+    // configuration
+})
+.then(response => 
+   response.json();
+   
+)
   return (
 	<>
-	<Head><!-- JavaScript Bundle with Popper -->
-<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></Script></Head>
-	
     <div className="flex bg-[#2F3855]">
       <div class="flex-none w-[20vw] h-[100vh]">
         <div className="">
